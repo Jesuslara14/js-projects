@@ -40,7 +40,7 @@ function scrambleTiles() {
       let randomIndex = Math.floor(allTiles.length*Math.random());
       
       // Randomly insert a tile before the current tile in the loop
-      board.insert(board.children[i], board.children[randomIndex]);      
+      board.insertBefore(randomIndex, allTiles[i])
    }
 }
 
@@ -52,6 +52,7 @@ function playConcentration() {
       
       // Run when a tile is clicked
       allTiles[i].onclick = function() {
+         let This = allTiles[i]
          // Test to see if the back of the tile is displayed
          if (This.lastElementChild.className = "back") {
             
@@ -83,7 +84,7 @@ function playConcentration() {
       }
       
       // Reset the tiles flipped counter to zero
-      titlesFlipped = 0;
+      tilesFlipped = 0;
    }   
 }
 

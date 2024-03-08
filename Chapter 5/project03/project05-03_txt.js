@@ -11,7 +11,16 @@
 */
 
 const article = document.getElementById('source_doc')
+const headers = document.getElementsByTagName('h2')
+const toc = document.getElementById('toc')
 
-function doScroll(dist){
+function handleScroll(dist){
       article.scroll(0, dist)
+}
+
+for(let i = 0; i < headers.length; i++){
+      let listItem = document.createElement('li')
+      listItem.addEventListener('click', () => {handleScroll(headers[i].offsetTop)})
+      listItem.innerHTML = headers[i].innerHTML
+      toc.appendChild(listItem)
 }

@@ -13,3 +13,6 @@
 // Node list of phrases that are associated with footnotes
 let phrases = document.querySelectorAll("article blockquote dfn");
 
+for(let i = 0; i < phrases.length; i++){
+      phrases[i].setAttribute('title', footnotes[i])
+}
