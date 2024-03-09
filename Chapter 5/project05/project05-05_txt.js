@@ -40,7 +40,7 @@ function scrambleTiles() {
       let randomIndex = Math.floor(allTiles.length*Math.random());
       
       // Randomly insert a tile before the current tile in the loop
-      board.insertBefore(randomIndex, allTiles[i])
+      board.insertBefore(board.children[i], board.children[randomIndex]);      
    }
 }
 
@@ -57,17 +57,20 @@ function playConcentration() {
          if (This.lastElementChild.className = "back") {
             
             tilesFlipped++;  // increase the flip count by 1
+
+            console.log(tilesFlipped)
             
-            if (tilesFlipped = 1) {
+            if (tilesFlipped == 1) {
                // if this is the first tile clicked then flip it
                firstFlipped = This;
                firstFlipped.appendChild(firstFlipped.firstElementChild);
-            } else if (tilesFlipped = 2) {
+            } else if (tilesFlipped == 2) {
                // if this is the second tile clicked then flip it
                // and then flip both tiles back after 1 second
+               console.log('e')
                secondFlipped = This;
                secondFlipped.appendChild(secondFlipped.firstElementChild);
-               timeID = window.setTimeout(flipBack, 1);
+               timeID = window.setTimeout(flipBack, 1000);
             }
          }
       }
@@ -75,6 +78,7 @@ function playConcentration() {
    
    /* Function to flip the two tiles if they don't match */
    function flipBack() {
+      console.log('we')
       // test to determine whether the tile images don't match
       if (firstFlipped.lastElementChild.src !== secondFlipped.lastElementChild.src) {   
          
