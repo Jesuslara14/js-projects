@@ -32,22 +32,22 @@
          <label for="customerName">Customer</label>
          <input type="text" id="customerName" name="customerName" /> <br />
          
-         <input type="button" id="addButton" value="add" /> 
-         <input type="button" id="searchButton" value="search" />
-         <input type="button" id="removeButton" value="remove" /> 
+         <input type="button" id="addButton" value="add" onclick="addCustomer()"/> 
+         <input type="button" id="searchButton" value="search" onclick="searchCustomer()"/>
+         <input type="button" id="removeButton" value="remove" onclick="removeCustomer()"/> 
          
          <p id="status"></p>
          
          
       </div>
-      
       <div id="customerBox">
-         <h1>Customer List <input id="topButton" value="Remove Top Customer" type="button" /></h1>
+         <h1>Customer List <input id="topButton" value="Remove Top Customer" type="button" onclick="removeCustomer(true)"/></h1>
          
          <ol id="customerList">
          </ol>
       </div>
    </section>
    </article>
+   <script src="project07-04_txt.js"></script>
 </body>
 </html>
